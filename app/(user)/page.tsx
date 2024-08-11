@@ -14,14 +14,7 @@ export default function MailHomePage() {
   const [mails, setMails] = useState([]);
   const [isSendMail, setIsSendMail] = useState(false);
   const [currentThread, setCurrentThread] = useState<any>({});
-  function setThread(id: Object) {
-    setCurrentThread(id);
-  }
   useEffect(() => {
-    if (params.get("token") === null) {
-      router.push("/login");
-      return;
-    }
     const handleKeyDown = (event: any) => {
       if (currentThread?.id) {
         // "D" key for Delete
@@ -38,12 +31,15 @@ export default function MailHomePage() {
 
     // Add event listener for keydown
     document.addEventListener("keydown", handleKeyDown);
-
+    if (params.get("token") === null) {
+      router.push("/login");
+      return;
+    }
     // Cleanup event listener on component unmount
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [currentThread.id]);
 
   function handleDeleteThread() {
     if (!currentThread.id && mails.length === 0) return;
@@ -59,6 +55,9 @@ export default function MailHomePage() {
     setMails(
       mails.filter((item: any) => item.threadId !== currentThread.threadId)
     );
+  }
+  function setThread(id: any) {
+    setCurrentThread(id);
   }
   return (
     <Suspense fallback={null}>
