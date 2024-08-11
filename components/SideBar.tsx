@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 function SideBar() {
   const { systemTheme, theme } = useTheme();
@@ -40,7 +41,7 @@ function SideBar() {
     },
   ];
   return (
-    <aside className="bg-light-white z-10 dark:bg-dark-black w-12 border-r-2 h-screen fixed">
+    <aside className="bg-light-white z-30 dark:bg-dark-black w-12 border-r-2 h-screen fixed">
       <div className="flex h-20">
         {currentTheme === "dark" ? (
           <Image
@@ -74,7 +75,10 @@ function SideBar() {
         ))}
       </div>
       <div className="absolute bottom-3 left-1/2 -translate-x-1/2">
-        <div className="w-8 mx-auto h-8 bg-green-900 rounded-full"></div>
+        <Avatar className="w-8 h-8">
+          <AvatarImage src="" />
+          <AvatarFallback>AS</AvatarFallback>
+        </Avatar>
       </div>
     </aside>
   );

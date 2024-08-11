@@ -79,6 +79,11 @@ const config = {
         "semi-black": "#202022",
         "light-white": "#fafafa",
         "semi-white": "#F4F6F8",
+      },
+      backgroundImage: {
+        "blue-grad": "linear-gradient(91.73deg, #4B63DD -2.99%, rgba(5, 36, 191, 0.99) 95.8%)",
+        "red-grad": "linear-gradient(91.73deg, #FA5252 -2.99%, #A91919 95.8%)",
+        "black-grad": "linear- gradient(180deg, #484E53 0 %, #2F3338 100 %)"
       }
     },
   },
