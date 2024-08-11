@@ -52,6 +52,8 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "semi-grey": "#e9e9eb",
+        "dark-grey": "#5b5f66"
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -74,7 +76,7 @@ const config = {
       },
       backgroundColor: {
         "dark-black": "#101113",
-        "semi-black": "#1F1F1F",
+        "semi-black": "#202022",
         "light-white": "#fafafa",
         "semi-white": "#F4F6F8",
       }

@@ -40,7 +40,7 @@ function SideBar() {
     },
   ];
   return (
-    <aside className="bg-light-white dark:bg-dark-black w-12 border-r-2 h-screen fixed">
+    <aside className="bg-light-white z-10 dark:bg-dark-black w-12 border-r-2 h-screen fixed">
       <div className="flex h-20">
         {currentTheme === "dark" ? (
           <Image

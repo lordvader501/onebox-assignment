@@ -8,13 +8,11 @@ function UserLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex">
+    <div className="">
       <SideBar />
-      <div className="ml-12">
+      <div className="">
         <Navbar />
-        <main className="flex flex-col flex-1 max-w-6xl w-full  ">
-          {children}
-        </main>
+        <main className="flex flex-col flex-1 w-full">{children}</main>
       </div>
     </div>
   );
